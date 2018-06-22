@@ -23,7 +23,20 @@ router.get('/:productId', (req, res, next) => {
   } else {
     res.status(200).json({
       message: 'You passed an ID'
-    })
+    });
   }
+});
+
+router.patch('/:productId', (req, res, next) => {
+  res.status(200).json({
+    message: 'Updated product!'
+  });
+});
+
+router.delete('/:productId', (req, res, next) => {
+  res.status(200).json({
+    message: 'Deleted product!'
+  })
 })
+
 module.exports = router;
