@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+// TODO: Create Order model and connect routes to db
+
 router.get('/', (req, res, next) => {
   res.status(200).json({
     message: 'Orders were fetched'
