@@ -2,10 +2,15 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan'); 
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 
+mongoose.connect(
+  'mongodb+srv://user-1:' + process.env.MONGO_ATLAS_PW + '@node-restful-shop-1pz42.mongodb.net/test?retryWrites=true'
+);
+  
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
